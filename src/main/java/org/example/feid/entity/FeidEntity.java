@@ -19,25 +19,25 @@ public class FeidEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     @JsonProperty("id")
-    private UUID id;
+    public UUID id;
 
     @Column(name = "nombre_cancion")
     @JsonProperty("nombreCancion")
     @NotBlank(message = "El nombre de la canción es obligatorio")
     @Size(min = 1, max = 100, message = "El nombre de la canción debe tener entre 1 y 100 caracteres")
-    private String nombreCancion;
+    public String nombreCancion;
 
     @Column(name = "duracion")
     @JsonProperty("duracion")
     @NotBlank(message = "La duración es obligatoria")
     @Pattern(regexp = "^\\d{1,2}:\\d{2}$", message = "La duración debe tener formato MM:SS")
-    private String duracion;
+    public String duracion;
 
     @Column(name = "artista")
     @JsonProperty("artista")
     @NotBlank(message = "El nombre del artista es obligatorio")
     @Size(min = 1, max = 100, message = "El nombre del artista debe tener entre 1 y 100 caracteres")
-    private String artista;
+    public String artista;
 
     @PrePersist
     public void generateUUID() {
